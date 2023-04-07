@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
+@section('title', 'Contact')
+@section('meta-description', 'Contact meta-description')
 
-<body>
-    @include('partials.navigation')
-    <h1>Contact</h1>
-</body>
-
-</html>
+@section('content')
+<h1>Contact</h1>
+@endsection
