@@ -10,6 +10,6 @@
 <x-layouts.app title="Blog" meta-description="Blog meta Description" :sum="2+2">
     <h1>Blog</h1>
     @foreach($posts as $post)
-    <h2>{{ $post['title'] }}</h2>
+    <h2>{{ $post->title }}</h2>
     @endforeach
 </x-layouts.app>
