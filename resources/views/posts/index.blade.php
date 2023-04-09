@@ -10,11 +10,6 @@
 <x-layouts.app title="Blog" meta-description="Blog meta Description" :sum="2+2">
     <h1>Blog</h1>
     @foreach($posts as $post)
-    <tr>
-        <td>{{ $post->title }}</td>
-        <td>{{ $post->body }}</td>
-        <td>{{ $post->created_at }}</td>
-        <td>{{ $post->updated_at }}</td>
-    </tr>
+    <h2><a href="{{route('posts.show', $post)}}">{{ $post->title }}</a></h2>
     @endforeach
 </x-layouts.app>

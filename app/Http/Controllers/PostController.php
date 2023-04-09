@@ -11,6 +11,11 @@ class PostController
     {
         $posts = Post::get(); // Asume que posts será la tabla ya que el modelo se llama Post en singular
 
-        return view('blog', ['posts' => $posts]);
+        return view('posts.index', ['posts' => $posts]);
+    }
+
+    public function show(Post $post) // Uso de Type hints pasándole clase Post
+    {
+        return view('posts.show', ['post' => $post]);
     }
 }
