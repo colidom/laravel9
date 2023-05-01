@@ -23,6 +23,7 @@ class PostController
     {
         return view('posts.create');
     }
+
     public function store(Request $request)
     {
         $post = new Post;
