@@ -29,7 +29,9 @@ class PostController
         $request->validate([
             'title' => ['required', 'min:5', 'max:20'],
             'body' => ['required', 'min:25', 'max:255'],
-        ]);
+        ],/*  [
+            'title.required' => "Error diferente :attribute"
+        ] */);
 
         $post = new Post;
         $post->title = $request->input('title');
