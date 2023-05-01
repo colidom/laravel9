@@ -24,9 +24,22 @@ class PostController
         return view('posts.edit', ['post' => $post]);
     }
 
-    public function update(Post $post)
+    public function update(Request $request, Post $post)
     {
-        return "Edit POST";
+        $request->validate([
+            'title' => ['required', 'min:5', 'max:20'],
+            'body' => ['required', 'min:25', 'max:255'],
+        ],/*  [
+            'title.required' => "Error diferente :attribute"
+        ] */);
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        session()->flash('status', 'Post updated!');
+
+        return to_route('posts.show', $post);
     }
 
     public function create()
