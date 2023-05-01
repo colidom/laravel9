@@ -10,11 +10,25 @@
 
     <label for="">
         Title <br>
-        <input name="title" type="text"><br>
+        <input name="title" type="text" value="{{ old('title') }}">
+
+        @error('title')
+        <br>
+        <small style="color:red">{{ $message }}</small>
+        @enderror
+
+        <br>
     </label>
     <label for="">
         Body <br>
-        <textarea name="body"></textarea><br>
+        <textarea name="body">{{ old('body') }}</textarea>
+
+        @error('body')
+        <br>
+        <small style="color:red">{{ $message }}</small>
+        @enderror
+
+        <br>
     </label>
     <button type="submit">Send</button>
 </form>
