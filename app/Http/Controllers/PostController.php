@@ -19,6 +19,16 @@ class PostController
         return view('posts.show', ['post' => $post]);
     }
 
+    public function edit(Post $post)
+    {
+        return view('posts.edit', ['post' => $post]);
+    }
+
+    public function update(Post $post)
+    {
+        return "Edit POST";
+    }
+
     public function create()
     {
         return view('posts.create');
